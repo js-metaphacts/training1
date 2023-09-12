@@ -21,3 +21,14 @@
 :Test2Class a owl:Class;
   rdfs:isDefinedBy <https://scania.com/Ontology/ontologytestadminnewchanges>;
   rdfs:label "test2Class"@en .
+
+:TestShape a sh:NodeShape;
+  sh:property [
+      sh:datatype xsd:string;
+      sh:path :description
+    ];
+  sh:targetClass :Test .
+
+:description a owl:DatatypeProperty;
+  rdfs:isDefinedBy <https://scania.com/Ontology/ontologytestadminnewchanges>;
+  rdfs:label "Description"@en .
