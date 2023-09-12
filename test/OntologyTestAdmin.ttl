@@ -17,3 +17,7 @@
 :Test a owl:Class;
   rdfs:isDefinedBy <https://scania.com/Ontology/ontologytestadminnewchanges>;
   rdfs:label "Test"@en .
+
+:Test2Class a owl:Class;
+  rdfs:isDefinedBy <https://scania.com/Ontology/ontologytestadminnewchanges>;
+  rdfs:label "test2Class"@en .
