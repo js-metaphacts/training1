@@ -1,104 +1,118 @@
-@prefix : <http://ontologies.metaphacts.com/person_and_country/> .
+@prefix : <http://ontologies.metaphacts.com/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix vaem: <http://www.linkedmodel.org/1.2/schema/vaem#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] a sh:NodeShape;
-  sh:property :e44abbcb-64b6-4c12-b6a6-bfd9fea1dbb8;
-  sh:targetClass :Parent .
-
-[] a sh:NodeShape;
-  sh:property :24adf527-e665-47f5-821e-faf4fa8e4621, :6656733e-ea38-4077-8cce-e4c30612232e,
-    :d7a76f9b-70b8-485b-9148-14557a21e902, :e691c20f-7faf-4ad6-ba97-c048a737e9e8;
-  sh:targetClass :Person .
+  sh:property <http://ontologies.metaphacts.com/person_and_country/e44abbcb-64b6-4c12-b6a6-bfd9fea1dbb8>;
+  sh:targetClass <http://ontologies.metaphacts.com/person_and_country/Parent> .
 
 [] a sh:NodeShape;
   sh:property [
-      sh:class :City;
-      sh:path :contains
-    ], :7238929a-e715-449e-8daf-77bb3f0ef3fd;
-  sh:targetClass :Country .
+      sh:datatype xsd:double;
+      sh:path <http://ontologies.metaphacts.com/person_and_country/phone>
+    ], <http://ontologies.metaphacts.com/person_and_country/24adf527-e665-47f5-821e-faf4fa8e4621>,
+    <http://ontologies.metaphacts.com/person_and_country/6656733e-ea38-4077-8cce-e4c30612232e>,
+    <http://ontologies.metaphacts.com/person_and_country/d7a76f9b-70b8-485b-9148-14557a21e902>,
+    <http://ontologies.metaphacts.com/person_and_country/e691c20f-7faf-4ad6-ba97-c048a737e9e8>;
+  sh:targetClass <http://ontologies.metaphacts.com/person_and_country/Person> .
 
-<http://ontologies.metaphacts.com/person_and_country> a owl:Ontology;
+[] a sh:NodeShape;
+  sh:property [
+      sh:class <http://ontologies.metaphacts.com/person_and_country/City>;
+      sh:path <http://ontologies.metaphacts.com/person_and_country/contains>
+    ], <http://ontologies.metaphacts.com/person_and_country/7238929a-e715-449e-8daf-77bb3f0ef3fd>;
+  sh:targetClass <http://ontologies.metaphacts.com/person_and_country/Country> .
+
+:person_and_country a owl:Ontology;
   dcterms:title "Person and Country";
-  vaem:namespace <http://ontologies.metaphacts.com/person_and_country/>;
+  <http://www.linkedmodel.org/1.2/schema/vaem#namespace> <http://ontologies.metaphacts.com/person_and_country/>;
   rdfs:label "Person and Country" .
 
-:24adf527-e665-47f5-821e-faf4fa8e4621 a sh:PropertyShape;
-  sh:class :Parent;
+<http://ontologies.metaphacts.com/person_and_country/24adf527-e665-47f5-821e-faf4fa8e4621>
+  a sh:PropertyShape;
+  sh:class <http://ontologies.metaphacts.com/person_and_country/Parent>;
   sh:maxCount 2;
   sh:minCount 1;
-  sh:path :hasParent .
+  sh:path <http://ontologies.metaphacts.com/person_and_country/hasParent> .
 
-:6656733e-ea38-4077-8cce-e4c30612232e a sh:PropertyShape;
-  sh:class :Country;
+<http://ontologies.metaphacts.com/person_and_country/6656733e-ea38-4077-8cce-e4c30612232e>
+  a sh:PropertyShape;
+  sh:class <http://ontologies.metaphacts.com/person_and_country/Country>;
   sh:maxCount 1;
   sh:minCount 1;
-  sh:path :placeOfBirth .
+  sh:path <http://ontologies.metaphacts.com/person_and_country/placeOfBirth> .
 
-:7238929a-e715-449e-8daf-77bb3f0ef3fd a sh:PropertyShape;
+<http://ontologies.metaphacts.com/person_and_country/7238929a-e715-449e-8daf-77bb3f0ef3fd>
+  a sh:PropertyShape;
   sh:datatype xsd:string;
   sh:maxCount 1;
   sh:minCount 1;
-  sh:path :label .
+  sh:path <http://ontologies.metaphacts.com/person_and_country/label> .
 
-:City a owl:Class;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/City> a owl:Class;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "City"@en .
 
-:Country a owl:Class;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/Country> a owl:Class;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "Country" .
 
-:Parent a owl:Class;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/Parent> a owl:Class;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "Parent" .
 
-:Person a owl:Class;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/Person> a owl:Class;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "Person" .
 
-:age a owl:DatatypeProperty;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/age> a owl:DatatypeProperty;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "age" .
 
-:born_in a owl:ObjectProperty;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/born_in> a owl:ObjectProperty;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "born in" .
 
-:contains a owl:ObjectProperty;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/contains> a owl:ObjectProperty;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "contains"@en .
 
-:d7a76f9b-70b8-485b-9148-14557a21e902 a sh:PropertyShape;
+<http://ontologies.metaphacts.com/person_and_country/d7a76f9b-70b8-485b-9148-14557a21e902>
+  a sh:PropertyShape;
   sh:datatype xsd:integer;
-  sh:path :age .
+  sh:path <http://ontologies.metaphacts.com/person_and_country/age> .
 
-:e44abbcb-64b6-4c12-b6a6-bfd9fea1dbb8 a sh:PropertyShape;
-  sh:path :name .
+<http://ontologies.metaphacts.com/person_and_country/e44abbcb-64b6-4c12-b6a6-bfd9fea1dbb8>
+  a sh:PropertyShape;
+  sh:path <http://ontologies.metaphacts.com/person_and_country/name> .
 
-:e691c20f-7faf-4ad6-ba97-c048a737e9e8 a sh:PropertyShape;
+<http://ontologies.metaphacts.com/person_and_country/e691c20f-7faf-4ad6-ba97-c048a737e9e8>
+  a sh:PropertyShape;
   sh:datatype xsd:string;
   sh:maxCount 1;
   sh:minCount 1;
   sh:path rdfs:label .
 
-:hasParent a owl:ObjectProperty;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/hasParent> a owl:ObjectProperty;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "hasParent" .
 
-:label a owl:DatatypeProperty;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/label> a owl:DatatypeProperty;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "label" .
 
-:name a owl:DatatypeProperty;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/name> a owl:DatatypeProperty;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "name" .
 
-:placeOfBirth a owl:ObjectProperty;
-  rdfs:isDefinedBy <http://ontologies.metaphacts.com/person_and_country>;
+<http://ontologies.metaphacts.com/person_and_country/phone> a owl:DatatypeProperty;
+  rdfs:isDefinedBy :person_and_country;
+  rdfs:label "phone"@en .
+
+<http://ontologies.metaphacts.com/person_and_country/placeOfBirth> a owl:ObjectProperty;
+  rdfs:isDefinedBy :person_and_country;
   rdfs:label "placeOfBirth" .
