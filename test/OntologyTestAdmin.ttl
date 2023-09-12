@@ -17,7 +17,3 @@
 :Test a owl:Class;
   rdfs:isDefinedBy <https://scania.com/Ontology/ontologytestadminnewchanges>;
   rdfs:label "Test"@en .
-
-:graph core:contributor "admin";
-  core:creator "admin";
-  core:graphType "PUBLIC" .
